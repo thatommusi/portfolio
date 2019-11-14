@@ -1,6 +1,9 @@
+var trainSpeed = 250;
+var trainPosition = 0;
+var animation;
+
 var train = document.getElementById("train");
 train.addEventListener("click", speedUp);
-trainSpeed = 250;
 
 var stopButton = document.getElementById("stopButton");
 stopButton.addEventListener("click", stopTrain);
