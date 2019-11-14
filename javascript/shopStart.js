@@ -19,7 +19,7 @@ function delete_selection(x) {
     if (quantities[x] > 0) {
         quantities[x] = quantities[x] - 1;
         totals[x] = prices[x] * quantities[x];
-        totalOrderAmt -= price[x];
+        totalOrderAmt -= prices[x];
     }
 
 
