@@ -13,58 +13,7 @@ document.getElementById("mouth").style.borderRadius = "4px";
 var rightEye = document.getElementById("righteye");
 rightEye.addEventListener("click", moveUpDown);
 
-function moveUpDown(e) {
-    var robotPart = e.target;
-    var top = 0;
-
-    var id = setInterval(frame, 10) // draw every 10ms
-
-    function frame() {
-        robotPart.style.top = top + '%';
-        top++;
-        if (top === 20) {
-            clearInterval(id);
-        }
-    }
-}
-var leftEye = document.getElementById("lefteye");
-leftEye.addEventListener("click", moveUpDown);
-
-function moveUpDown(e) {
-    var robotPart = e.target;
-    var top = 0;
-
-    var id = setInterval(frame, 10) // draw every 10ms
-
-    function frame() {
-        robotPart.style.top = top + '%';
-        top++;
-        if (top === 20) {
-            clearInterval(id);
-        }
-    }
-}
-var nose = document.getElementById("nose");
-nose.addEventListener("click", moveUpDown);
-
-function moveUpDown(e) {
-    var robotPart = e.target;
-    var top = 0;
-
-    var id = setInterval(frame, 10) // draw every 10ms
-
-    function frame() {
-        robotPart.style.top = top + '%';
-        top++;
-        if (top === 20) {
-            clearInterval(id);
-        }
-    }
-}
-var mouth = document.getElementById("mouth");
-mouth.addEventListener("click", moveUpDown);
-
-function moveUpDown(e) {
+function moveMouthUpDown(e) {
     var robotPart = e.target;
     var top = 0;
 
@@ -78,10 +27,24 @@ function moveUpDown(e) {
         }
     }
 }
-var rightArm = document.getElementById("rightarm");
-rightArm.addEventListener("click", moveUpDown);
 
-function moveRound(e) {
+function moveUpDown(e) {
+    var robotPart = e.target;
+    console.log("top = " + robotPart.style.top);
+    var top = 0;
+
+    var id = setInterval(frame, 10) // draw every 10ms
+
+    function frame() {
+        robotPart.style.top = top + '%';
+        top++;
+        if (top === 20) {
+            clearInterval(id);
+        }
+    }
+}
+
+function moveNoseUpDown(e) {
     var robotPart = e.target;
     var top = 0;
 
@@ -90,15 +53,28 @@ function moveRound(e) {
     function frame() {
         robotPart.style.top = top + '%';
         top++;
-        if (top === 10) {
+        if (top === 50) {
             clearInterval(id);
         }
     }
 }
-var head = document.getElementById("head");
-head.addEventListener("click", moveUpDown);
 
-function moveUpDown(e) {
+function moveArmUpDown(e) {
+    var robotPart = e.target;
+    var top = 0;
+
+    var id = setInterval(frame, 10) // draw every 10ms
+
+    function frame() {
+        robotPart.style.top = top + '%';
+        top++;
+        if (top === 35) {
+            clearInterval(id);
+        }
+    }
+}
+
+function moveHeadUpDown(e) {
     var robotPart = e.target;
     var top = 0;
 
@@ -112,8 +88,7 @@ function moveUpDown(e) {
         }
     }
 }
-var leftArm = document.getElementById("leftarm");
-leftArm.addEventListener("click", moveLeftRight);
+
 
 function moveLeftRight(e) {
     var robotPart = e.target;
@@ -129,3 +104,43 @@ function moveLeftRight(e) {
         }
     }
 }
+
+function moveRound(e) {
+    var robotPart = e.target;
+    var top = 0;
+
+    var id = setInterval(frame, 10) // draw every 10ms
+
+    function frame() {
+        robotPart.style.top = top + '%';
+        top++;
+        if (top === 10) {
+            clearInterval(id);
+        }
+    }
+}
+
+
+
+var leftEye = document.getElementById("lefteye");
+leftEye.addEventListener("click", moveUpDown);
+
+
+
+
+var nose = document.getElementById("nose");
+nose.addEventListener("click", moveNoseUpDown);
+
+
+var mouth = document.getElementById("mouth");
+mouth.addEventListener("click", moveMouthUpDown);
+
+
+var rightArm = document.getElementById("rightarm");
+rightArm.addEventListener("click", moveArmUpDown);
+
+var head = document.getElementById("head");
+head.addEventListener("click", moveHeadUpDown);
+
+var leftArm = document.getElementById("leftarm");
+leftArm.addEventListener("click", moveLeftRight);
